@@ -53,7 +53,7 @@ body {
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
   color: hsl(var(--clr-neutral-dark));
-  line-height: 1.5;
+  line-height: 1.7;
   text-align: center;
   padding-block: 5rem;
   min-height: 100vh;
@@ -127,7 +127,7 @@ h1 {
   font-size: var(--fs-900);
   font-weight: 700;
   color: hsl(var(--clr-accent-dark));
-  line-height: 1;
+  line-height: 1.1;
   max-width: 12ch;
 }
 
