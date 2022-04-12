@@ -65,6 +65,12 @@ body {
   background-size: max(50%, 320px);
 }
 
+@media (min-width: 60em) {
+  body {
+    padding-block: 8rem;
+  }
+}
+
 /* Images */
 img {
   max-width: 100%;
