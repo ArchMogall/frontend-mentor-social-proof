@@ -212,11 +212,11 @@ h1 {
 
 .quotes__container {
   gap: 0 1.5rem;
-	grid-template-columns: max-content 1fr;
-	grid-template-areas:
-		"image name"
-		"image status"
-		"content content";
+  grid-template-columns: max-content 1fr;
+  grid-template-areas:
+    "image name"
+    "image status"
+    "content content";
 }
 
 .quotes__img {
