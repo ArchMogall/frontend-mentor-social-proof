@@ -1,0 +1,276 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* Colours */
+  --clr-neutral-dark: 303 10% 53%;
+  --clr-neutral-light: 300 24% 96%;
+  --clr-accent-dark: 300 43% 22%;
+  --clr-accent-light: 333 80% 67%;
+
+  /* Border-radius */
+  --br: 0.5rem;
+
+  /* Font family */
+  --ff-sans: "Spartan", sans-serif;
+
+  /* Font sizes */
+  --fs-900: 2rem;
+  --fs-500: 0.9375rem;
+  --fs-400: 0.8125rem;
+}
+
+@media (min-width: 60em) {
+  :root {
+    --fs-900: 3rem;
+  }
+}
+
+
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margins */
+body,
+h1,
+p {
+  margin: 0;
+}
+
+/* Body */
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  color: hsl(var(--clr-neutral-dark));
+  line-height: 1.5;
+  text-align: center;
+  padding-block: 5rem;
+  min-height: 100vh;
+  background-image:
+    url(images/bg-pattern-top-desktop.svg),
+    url(images/bg-pattern-bottom-desktop.svg);
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+  background-size: max(50%, 320px);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Lists */
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 60em) {
+  .flex {
+    flex-direction: row;
+  }
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.container {
+  max-width: 75rem;
+  padding-inline: 2rem;
+  margin-inline: auto;
+}
+
+
+
+
+/* ------------------- */
+/* Typography          */
+/* ------------------- */
+
+h1 {
+  font-size: var(--fs-900);
+  font-weight: 700;
+  color: hsl(var(--clr-accent-dark));
+  line-height: 1;
+  max-width: 12ch;
+}
+
+.lead {
+  font-size: var(--fs-500);
+  max-width: 38ch;
+}
+
+@media (max-width: 59.999em) {
+  h1,
+  .lead {
+    margin-inline: auto;
+  }
+
+  .lead {
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+/* ------------------- */
+/* Components          */
+/* ------------------- */
+
+/* Ratings */
+.ratings > li {
+  gap: 0.5rem;
+  max-width: 24rem;
+  background: hsl(var(--clr-neutral-light));
+  color: hsl(var(--clr-accent-dark));
+  font-weight: 700;
+  padding: 1rem;
+  margin-inline: auto;
+  border-radius: var(--br);
+}
+
+@media (min-width: 60em) {
+  .ratings > li {
+    align-items: center;
+    gap: 2rem;
+    max-width: 90%;
+    margin-right: 0;
+  }
+
+  .ratings > li:first-of-type {
+    transform: translateX(-5rem);
+  }
+
+  .ratings > li:nth-of-type(2) {
+    transform: translateX(-2.5rem);
+  }
+}
+
+.stars > img {
+  display: inline-block;
+  margin: 0 0.125rem;
+}
+
+/* Quotes */
+.quotes > li {
+  width: 100%;
+  max-width: 24rem;
+  background: hsl(var(--clr-accent-dark));
+  color: hsl(var(--clr-neutral-light));
+  text-align: left;
+  padding: 2rem;
+  margin-inline: auto;
+  border-radius: var(--br);
+}
+
+@media (min-width: 60em) {
+  .quotes > li:nth-of-type(2) {
+    transform: translateY(1rem);
+  }
+
+  .quotes > li:nth-of-type(3) {
+    transform: translateY(2rem);
+  }
+}
+
+.quotes__container {
+  gap: 0 1.5rem;
+	grid-template-columns: max-content 1fr;
+	grid-template-areas:
+		"image name"
+		"image status"
+		"content content";
+}
+
+.quotes__img {
+  grid-area: image;
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.quotes__name {
+  grid-area: name;
+  align-self: end;
+  font-weight: 700;
+}
+
+.quotes__status {
+  grid-area: status;
+  color: hsl(var(--clr-accent-light));
+}
+
+.quotes__content {
+  grid-area: content;
+  margin-top: 2rem;
+}
+
+
+
+
+/* ------------------- */
+/* General layout      */
+/* ------------------- */
+
+main {
+  gap: 2.5rem;
+}
+
+.quotes {
+  gap: 1rem;
+}
+
+@media (min-width: 60em) {
+  main {
+    text-align: left;
+    gap: 4rem 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "intro ratings"
+      "quotes quotes";
+  }
+
+  .intro {
+    grid-area: intro;
+  }
+
+  .ratings {
+    grid-area: ratings;
+    align-self: center;
+  }
+
+  .quotes {
+    grid-area: quotes;
+    gap: 1.5rem;
+  }
+}
