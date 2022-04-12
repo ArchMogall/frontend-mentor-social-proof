@@ -58,8 +58,8 @@ body {
   padding-block: 5rem;
   min-height: 100vh;
   background-image:
-    url(images/bg-pattern-top-desktop.svg),
-    url(images/bg-pattern-bottom-desktop.svg);
+    url(bg-pattern-top-desktop.svg),
+    url(bg-pattern-bottom-desktop.svg);
   background-position: top left, bottom right;
   background-repeat: no-repeat;
   background-size: max(50%, 320px);
@@ -206,11 +206,11 @@ h1 {
 
 .quotes__container {
   gap: 0 1.5rem;
-	grid-template-columns: max-content 1fr;
-	grid-template-areas:
-		"image name"
-		"image status"
-		"content content";
+  grid-template-columns: max-content 1fr;
+  grid-template-areas:
+    "image name"
+    "image status"
+    "content content";
 }
 
 .quotes__img {
